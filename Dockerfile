@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /DOC_HOME/
 
 # Expose the port
-EXPOSE 8001
+EXPOSE 8000
 
 # Copy the entrypoint.sh script specifically
 COPY entrypoint.sh /DOC_HOME/entrypoint.sh
@@ -30,4 +30,4 @@ RUN chmod +x /DOC_HOME/entrypoint.sh
 ENTRYPOINT ["/DOC_HOME/entrypoint.sh"]
 
 # Default command to run when the container starts
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8001"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
